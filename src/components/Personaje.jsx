@@ -1,4 +1,4 @@
-const Personaje = ( { personajeInfo = ""} ) => {
+const Personaje = ( { personajeInfo } ) => {
 
     const { name, image, species } = personajeInfo
 

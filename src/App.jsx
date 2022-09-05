@@ -1,10 +1,20 @@
 import Form from "./components/Form"
 import SettData from "./components/SetData"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 function App() {
 
   const [ personaje ,  setPersonaje] = useState('')
+
+  useEffect(() => {
+    if(localStorage.getItem('getData')){
+      setPersonaje(JSON.parse(localStorage.getItem('getData')))
+    }
+  } ,[])
+
+  useEffect(() => {
+      localStorage.setItem('getData' , JSON.stringify(personaje))
+  } , [personaje])
 
   return (
     <div className="container">
